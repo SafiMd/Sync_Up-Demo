@@ -1,0 +1,84 @@
+name: syncup
+description: A simple budgeting app with bank connectivity and AI insights
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  provider: ^6.0.5
+  
+  # Encryption & Security
+  encrypt: ^5.0.1
+  crypto: ^3.0.3
+  
+  # Network & API
+  http: ^1.1.0
+  
+  # Data Storage
+  shared_preferences: ^2.2.2
+  
+  # JSON Serialization
+  json_annotation: ^4.8.1
+  
+  # Date & Time Formatting
+  intl: ^0.18.1
+  
+  # UI Components
+  cupertino_icons: ^1.0.6
+  
+  # Charts (for future budget visualizations)
+  fl_chart: ^0.66.0
+  
+  # For Production Plaid Integration (uncomment when ready)
+  # plaid_flutter: ^3.1.1
+  
+  # Additional UI enhancements (optional)
+  # shimmer: ^3.0.0  # For loading animations
+  # percent_indicator: ^4.2.3  # For progress indicators
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code generation
+  build_runner: ^2.4.7
+  json_serializable: ^6.7.1
+  
+  # Linting
+  flutter_lints: ^3.0.1
+  
+  # Testing
+  mockito: ^5.4.4
+  integration_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section:
+  # assets:
+  #   - images/logo.png
+  #   - images/icons/
+  #   - assets/
+
+  # Custom fonts (optional)
+  # fonts:
+  #   - family: Montserrat
+  #     fonts:
+  #       - asset: fonts/Montserrat-Regular.ttf
+  #       - asset: fonts/Montserrat-Bold.ttf
+  #         weight: 700
+  #   - family: Roboto
+  #     fonts:
+  #       - asset: fonts/Roboto-Regular.ttf
+  #       - asset: fonts/Roboto-Medium.ttf
+  #         weight: 500
+  #       - asset: fonts/Roboto-Bold.ttf
+  #         weight: 700

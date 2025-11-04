@@ -1,0 +1,79 @@
+openapi: 3.0.3
+info:
+  title: SyncUp API
+  version: 1.0.0
+servers:
+  - url: http://localhost:4000/v1
+paths:
+  /health:
+    get:
+      responses: { '200': { description: OK } }
+  /accounts:
+    get:
+      responses: { '200': { description: List accounts } }
+  /transactions:
+    get:
+      parameters:
+        - in: query
+          name: accountId
+          schema: { type: string }
+        - in: query
+          name: category
+          schema: { type: string }
+        - in: query
+          name: from
+          schema: { type: string, format: date }
+        - in: query
+          name: to
+          schema: { type: string, format: date }
+      responses: { '200': { description: List transactions } }
+  /budgets:
+    get:
+      parameters:
+        - in: query
+          name: month
+          schema: { type: string, example: '2025-10' }
+      responses: { '200': { description: Get budget } }
+    put:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [month, lines]
+              properties:
+                month: { type: string }
+                lines:
+                  type: array
+                  items:
+                    type: object
+                    required: [category, monthlyLimit]
+                    properties:
+                      category: { type: string }
+                      monthlyLimit: { type: number }
+      responses: { '200': { description: Upsert budget } }
+  /insights:
+    get:
+      parameters:
+        - in: query
+          name: month
+          schema: { type: string, example: '2025-10' }
+      responses: { '200': { description: Budget insights for month } }
+  /plaid/link/token/create:
+    post:
+      requestBody: { required: false }
+      responses: { '200': { description: Mock link token } }
+  /plaid/item/public_token/exchange:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [public_token]
+              properties:
+                public_token: { type: string }
+      responses: { '200': { description: Mock access token } }
+

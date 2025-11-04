@@ -1,0 +1,28 @@
+{
+  "accounts": [
+    { "id": "acc_chk_1", "name": "Checking", "type": "checking", "mask": "1234", "currentBalance": 2450.25, "availableBalance": 2300.25, "institution": "Demo Bank" },
+    { "id": "acc_svg_1", "name": "Savings", "type": "savings", "mask": "5678", "currentBalance": 5200.00, "institution": "Demo Bank" },
+    { "id": "acc_cc_1", "name": "Credit Card", "type": "credit", "mask": "9012", "currentBalance": -320.48, "institution": "Demo Bank" }
+  ],
+  "transactions": [
+    { "id": "tx_001", "accountId": "acc_chk_1", "amount": -18.5, "merchant": "Starbucks", "category": "Food and Drink", "date": "2025-10-08" },
+    { "id": "tx_002", "accountId": "acc_chk_1", "amount": -95.2, "merchant": "Target", "category": "Shops", "date": "2025-10-09" },
+    { "id": "tx_003", "accountId": "acc_chk_1", "amount": -42.0, "merchant": "MTA", "category": "Transportation", "date": "2025-10-10" },
+    { "id": "tx_004", "accountId": "acc_chk_1", "amount": 2500.0, "merchant": "Payroll", "category": "Other", "date": "2025-10-01" },
+    { "id": "tx_005", "accountId": "acc_cc_1", "amount": -59.99, "merchant": "Netflix", "category": "Entertainment", "date": "2025-10-11" }
+  ],
+  "budgets": [
+    {
+      "id": "default",
+      "month": "2025-10",
+      "lines": [
+        { "category": "Food and Drink", "monthlyLimit": 0.15 },
+        { "category": "Shops", "monthlyLimit": 0.10 },
+        { "category": "Entertainment", "monthlyLimit": 0.05 },
+        { "category": "Transportation", "monthlyLimit": 0.12 },
+        { "category": "Other", "monthlyLimit": 0.02 }
+      ]
+    }
+  ]
+}
+
